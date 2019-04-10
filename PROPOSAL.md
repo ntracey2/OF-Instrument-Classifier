@@ -1,4 +1,4 @@
-#Naïve Bayes Instrument Classification Proposal
+# Naïve Bayes Instrument Classification Proposal
 
 ## Premise:
 My idea for this project is to take the simple Naïve Bayes classifier we made for handwritten digits and extend it to classify something more complicated, specifically audio. I want to create and train a model using some collected dataset of audio files. After brainstorming what type of audio could be good to use for this project (i.e. vocal accents, emotion in speaking, songs, etc.), I decided that analyzing audio files of individual instruments could yield accurate results from the classifier due to the various unique timbres of different instruments. 

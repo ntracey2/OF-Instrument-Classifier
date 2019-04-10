@@ -1,0 +1,1 @@
+I am encountering several strange errors with the ofxMaxim library. I believe this is due to the lack of support with the lasted version of visual studio. I have resolved some of the macro issues but there still seems to be a preprocessor error.

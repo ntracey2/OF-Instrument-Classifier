@@ -1,8 +1,7 @@
 #pragma once
 
-//#define NOMINMAX
 #include "ofMain.h"
-#include "ofxMaxim.h"
+#include "marsyas/system/MarSystemManager.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,21 +21,5 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-
-		void audioOut(float *buffer, int bufferSize, int nChannels);
-		void play(double *output);
-		maxiSample testSample;
-		
-
-		maxiOsc osc;
-		double frequency;
-		double currentSample;
-		unsigned bufferSize;
-		unsigned sampleRate;
-
-
-		ofSoundPlayer soundPlayer;
-		ofSoundPlayer soundPlayer1;
-		ofSoundStream soundStream;
 		
 };

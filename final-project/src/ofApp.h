@@ -23,11 +23,20 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		void audioOutput(float *buffer, int bufferSize, int nChannels);
+		void audioOut(float *buffer, int bufferSize, int nChannels);
+		void play(double *output);
+		maxiSample testSample;
+		
+
 		maxiOsc osc;
 		double frequency;
 		double currentSample;
 		unsigned bufferSize;
 		unsigned sampleRate;
+
+
+		ofSoundPlayer soundPlayer;
+		ofSoundPlayer soundPlayer1;
+		ofSoundStream soundStream;
 		
 };

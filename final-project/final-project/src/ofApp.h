@@ -1,12 +1,15 @@
 #pragma once
 
 #include "ofMain.h"
-#include "marsyas/system/MarSystemManager.h"
+#include "ofxAudioFile.h"
+//#include "Gist.h"
+#include "ofxGist.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
+		
 		void update();
 		void draw();
 
@@ -21,5 +24,10 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		ofxAudioFile audiofile;
+
+		std::vector<float> GetSampleVector(std::string file_name);
+		void RetrieveData(std::vector<float> audio);
 		
 };

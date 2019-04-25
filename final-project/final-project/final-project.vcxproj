@@ -96,14 +96,15 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\include;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\include;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\lib\marsyas.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -116,8 +117,9 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -125,7 +127,6 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -137,7 +138,9 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\include;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\include;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -148,7 +151,6 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>C:\Users\nigel\Downloads\marsyas-0.5.0-win32\lib\marsyas.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -160,8 +162,9 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -171,13 +174,22 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.c" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.cpp" />
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.cpp" />
@@ -188,10 +200,27 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp" />
+    <ClCompile Include="src\FeatureExtraction.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_flac.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_mp3.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_wav.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\stb_vorbis.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\Gist.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\_kiss_fft_guts.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.h" />
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.h" />
@@ -203,6 +232,7 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h" />
+    <ClInclude Include="src\FeatureExtraction.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

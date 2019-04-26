@@ -1,1 +1,2 @@
 # Final Project
+This project aims to be a Naive Bayes classifier for isolated instrument sounds. It is an openframeworks application that makes use of Gist, AudioFile, and (possible) MLPack libraries. Input audio files must be .wav and file names must begin with the first three characters of the instrument in brackets, for example: '[tru]exmaple_trumpet_file.wav'

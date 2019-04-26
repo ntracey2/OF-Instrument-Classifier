@@ -3,56 +3,113 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(0);
-
-	std::string path = "[sax][cla]1573__1.wav";
 	
-	std::vector<float> sample_vector;
+	//ofBackground(0);
 
-	sample_vector = GetSampleVector(ofToDataPath(path));
+	gist.setDetect(GIST_PEAK_ENERGY);
+	gist.setDetect(GIST_ROOT_MEAN_SQUARE);
+	gist.setDetect(GIST_ZERO_CROSSING_RATE);
+	gist.setDetect(GIST_PITCH);
+	gist.setDetect(GIST_SPECTRAL_CENTROID);
+	gist.setDetect(GIST_SPECTRAL_CREST);
 
-	RetrieveData(sample_vector);
+	iMap.insert(pair<std::string, INSTRUMENTS>("cel", cel));
+	iMap.insert(pair<std::string, INSTRUMENTS>("cla", cla));
+	iMap.insert(pair<std::string, INSTRUMENTS>("flu", flu));
+	iMap.insert(pair<std::string, INSTRUMENTS>("gac", gac));
+	iMap.insert(pair<std::string, INSTRUMENTS>("gel", gel));
+	iMap.insert(pair<std::string, INSTRUMENTS>("org", org));
+	iMap.insert(pair<std::string, INSTRUMENTS>("pia", pia));
+	iMap.insert(pair<std::string, INSTRUMENTS>("sax", sax));
+	iMap.insert(pair<std::string, INSTRUMENTS>("tru", tru));
+	iMap.insert(pair<std::string, INSTRUMENTS>("vio", vio));
+	iMap.insert(pair<std::string, INSTRUMENTS>("voi", voi));
+
+	//std::string path = "[sax][cla]1573__1.wav";
+	
+	//std::vector<float> sample_vector;
+
+
+
+	//sample_vector = GetSampleVector(ofToDataPath(path));
+
+	//RetrieveData(sample_vector);
 }
 
 
-void ofApp::RetrieveData(std::vector<float> audio)
+
+
+void ofApp::SetupGist(const std::vector<float> &audio)
 {
 
-	int frameSize = 512;
-	int sampleRate = 44100;
-	
-	ofxGist gist;
-	
+	//int frameSize = 512;
+	//int sampleRate = 44100;
 	
 
-	std::vector<float> audioFrame = audio;
+	
+	gist.clearHistory();
+
+	std::vector<float> audioFrame(audio);
 
 	// !
 	// fill audio frame with samples here
 	// !
-	gist.setDetect(GIST_PEAK_ENERGY);
-	gist.setDetect(GIST_ROOT_MEAN_SQUARE);
-	gist.setDetect(GIST_ZERO_CROSSING_RATE);
-	gist.processAudio(audio);
-	//gist.
 
-	// Root Mean Square (RMS)
-	float rms = gist.getValue(GIST_ROOT_MEAN_SQUARE);
-	std::cout << rms << std::endl;
-	//float rms = gist.rootMeanSquare();
+	gist.processAudio(audioFrame);
 
-	// Peak Energy
-	float peakEnergy = gist.getValue(GIST_PEAK_ENERGY);
-	std::cout << peakEnergy << std::endl;
-	//float peakEnergy = gist.peakEnergy();
-
-	// Zero Crossing rate
-	float zcr = gist.getValue(GIST_ZERO_CROSSING_RATE);
-	std::cout << zcr << std::endl;
-	//float zcr = gist.zeroCrossingRate();
-	std::cout << "DONE!" << std::endl;
+	//std::cout << "DONE!" << std::endl;
 }
 
+void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
+{
+	//thank stack overflow for file iteration
+	HANDLE hFind;
+	WIN32_FIND_DATA FindFileData;
+	LPCWSTR d = L"bin/data/TrainingSamples/*.wav";
+	int sample = 0;
+	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
+		do {
+			std::wstring ws(FindFileData.cFileName);
+			std::string s(ws.begin(), ws.end());
+			
+			//FILL COLUMN
+
+			FillTrainingMatrixColumn("bin/data/TrainingSamples/" + s, sample);
+			sample++;
+
+		} while (FindNextFile(hFind, &FindFileData));
+		FindClose(hFind);
+	}
+	else {
+		std::cout << "something went wrong" << std::endl;
+	}
+}
+
+void ofApp::FillTrainingMatrixColumn(std::string file, int c) {
+	std::vector<float> features = GetFeatureVector(file);
+	int i = 0;
+	for (auto f : features) {
+		data_matrix[c][i];
+		i++;
+	}
+}
+
+std::vector<float> ofApp::GetFeatureVector(std::string file) {
+	std::vector<float> audio(GetSampleVector(file));
+	SetupGist(audio);
+
+	std::vector<float> features;
+	features.push_back(gist.getValue(GIST_ZERO_CROSSING_RATE));
+	features.push_back(gist.getValue(GIST_PEAK_ENERGY));
+	features.push_back(gist.getValue(GIST_ROOT_MEAN_SQUARE));
+	features.push_back(gist.getValue(GIST_PITCH));
+	features.push_back(gist.getValue(GIST_SPECTRAL_CENTROID));
+	features.push_back(gist.getValue(GIST_SPECTRAL_CREST));
+	features.push_back(gist.getMFCCAvg(12));
+	features.push_back(iMap[file.substr(1, 3)]);	//label in last row
+
+	return features;
+}
 
 std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 
@@ -83,7 +140,6 @@ std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 	std::vector<float> to_ret(samples_data, samples_data + audiofile.length());
 	return to_ret;
 }
-
 
 
 

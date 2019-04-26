@@ -70,6 +70,9 @@
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.cpp">
       <Filter>addons\ofxAudioFile\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\UnitTesting.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\stb_vorbis.h">
       <Filter>addons\ofxAudioFile\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\catch.hpp">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

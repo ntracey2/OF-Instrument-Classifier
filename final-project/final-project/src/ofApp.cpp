@@ -9,7 +9,7 @@ void ofApp::setup(){
 	gist.setDetect(GIST_PEAK_ENERGY);
 	gist.setDetect(GIST_ROOT_MEAN_SQUARE);
 	gist.setDetect(GIST_ZERO_CROSSING_RATE);
-	gist.setDetect(GIST_PITCH);
+	//gist.setDetect(GIST_PITCH);
 	gist.setDetect(GIST_SPECTRAL_CENTROID);
 	gist.setDetect(GIST_SPECTRAL_CREST);
 
@@ -29,7 +29,20 @@ void ofApp::setup(){
 	
 	//std::vector<float> sample_vector;
 
+	PopulateTrainingMatrixFromDir("");
 
+	for (int i = 0; i < data_matrix.size(); i++) {
+		for (int j = 0; j < data_matrix[0].size(); j++) {
+			std::cout << data_matrix[i][j] << ", ";
+		}
+		std::cout << std::endl;
+	}
+
+	//std::vector<float> features(GetFeatureVector(ofToDataPath(path)));
+
+	/*for (auto f : features) {
+		std::cout << f << std::endl;
+	}*/
 
 	//sample_vector = GetSampleVector(ofToDataPath(path));
 
@@ -49,13 +62,11 @@ void ofApp::SetupGist(const std::vector<float> &audio)
 	
 	gist.clearHistory();
 
-	std::vector<float> audioFrame(audio);
+	std::vector<float> audioFrame(audio); //fill audio frame with samples
 
-	// !
-	// fill audio frame with samples here
-	// !
 
-	gist.processAudio(audioFrame);
+	//gist.processAudio(audioFrame);
+	gist.processAudio(audio);
 
 	//std::cout << "DONE!" << std::endl;
 }
@@ -73,47 +84,47 @@ void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
 			std::string s(ws.begin(), ws.end());
 			
 			//FILL COLUMN
-
-			FillTrainingMatrixColumn("bin/data/TrainingSamples/" + s, sample);
+			std::cout << "processing " + s << std::endl;
+			FillTrainingMatrixColumn(ofToDataPath("TrainingSamples\\" + s), sample);
 			sample++;
 
 		} while (FindNextFile(hFind, &FindFileData));
 		FindClose(hFind);
 	}
 	else {
-		std::cout << "something went wrong" << std::endl;
+		std::cout << "something went wrong, check file path" << std::endl;
 	}
 }
 
 void ofApp::FillTrainingMatrixColumn(std::string file, int c) {
-	std::vector<float> features = GetFeatureVector(file);
+	std::vector<float> features(GetFeatureVector(file));
 	int i = 0;
 	for (auto f : features) {
-		data_matrix[c][i];
+		data_matrix[i][c] = f;
 		i++;
 	}
 }
 
 std::vector<float> ofApp::GetFeatureVector(std::string file) {
-	std::vector<float> audio(GetSampleVector(file));
-	SetupGist(audio);
+	//std::vector<float> audio(GetSampleVector(file));
+	SetupGist(GetSampleVector(file));
 
 	std::vector<float> features;
 	features.push_back(gist.getValue(GIST_ZERO_CROSSING_RATE));
 	features.push_back(gist.getValue(GIST_PEAK_ENERGY));
 	features.push_back(gist.getValue(GIST_ROOT_MEAN_SQUARE));
-	features.push_back(gist.getValue(GIST_PITCH));
+	//features.push_back(gist.getValue(GIST_PITCH));
 	features.push_back(gist.getValue(GIST_SPECTRAL_CENTROID));
 	features.push_back(gist.getValue(GIST_SPECTRAL_CREST));
 	features.push_back(gist.getMFCCAvg(12));
-	features.push_back(iMap[file.substr(1, 3)]);	//label in last row
+	features.push_back(iMap[file.substr(26, 3)]);	//label in last row
 
 	return features;
 }
 
 std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 
-
+	std::cout << file_path << std::endl;
 	if (ofFile::doesFileExist(file_path)) {
 		audiofile.load(file_path);
 		if (!audiofile.loaded()) {
@@ -127,15 +138,6 @@ std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 	//audiofile.load(file_path);
 
 	float* samples_data = audiofile.data();
-	if (audiofile.loaded()) {
-		//std::cout << "Attempting to print audio buffer" << std::endl;
-		/*for (int i = 0; i < audiofile.length(); i++) {
-			std::cout << samples_data[i] << std::endl;
-		}*/
-	}
-	else {
-		std::cout << "file not loaded properly!" << std::endl;
-	}
 
 	std::vector<float> to_ret(samples_data, samples_data + audiofile.length());
 	return to_ret;

@@ -6,6 +6,9 @@
 //#include "ofxDir.h"
 //#include "ofxFile.h"
 
+#define NUM_TRAINING_IMAGES 2
+#define NUM_FEATURES 7
+
 typedef enum INSTRUMENTS {
 	cel,
 	cla,
@@ -67,6 +70,6 @@ class ofApp : public ofBaseApp{
 
 		std::vector<float> GetFeatureVector(std::string file);
 
-		std::array<std::array<float, 6705>, 10> data_matrix;
+		std::array<std::array<float, NUM_TRAINING_IMAGES>, NUM_FEATURES> data_matrix;
 		
 };

@@ -31,12 +31,16 @@ void ofApp::setup(){
 
 	PopulateTrainingMatrixFromDir("");
 
-	for (int i = 0; i < data_matrix.size(); i++) {
-		for (int j = 0; j < data_matrix[0].size(); j++) {
-			std::cout << data_matrix[i][j] << ", ";
-		}
-		std::cout << std::endl;
-	}
+	SaveTrainingMatrix();
+
+	//for (int i = 0; i < data_matrix.size(); i++) {
+	//	for (int j = 0; j < data_matrix[0].size(); j++) {
+	//		std::cout << data_matrix[i][j] << ", ";
+	//	}
+	//	std::cout << std::endl;
+	//}
+
+
 
 	//std::vector<float> features(GetFeatureVector(ofToDataPath(path)));
 
@@ -100,7 +104,7 @@ void ofApp::FillTrainingMatrixColumn(std::string file, int c) {
 	std::vector<float> features(GetFeatureVector(file));
 	int i = 0;
 	for (auto f : features) {
-		data_matrix[i][c] = f;
+		data_matrix[c][i] = f;
 		i++;
 	}
 }
@@ -120,6 +124,19 @@ std::vector<float> ofApp::GetFeatureVector(std::string file) {
 	features.push_back(iMap[file.substr(26, 3)]);	//label in last row
 
 	return features;
+}
+
+void ofApp::SaveTrainingMatrix()
+{
+	std::ofstream file;
+	file.open("example.csv");
+	for (int i = 0; i < data_matrix.size(); i++) {
+		for (int j = 0; j < data_matrix[0].size(); j++) {
+			file << data_matrix[i][j] << ",";
+		}
+		file << "\n";
+	}
+	file.close();
 }
 
 std::vector<float> ofApp::GetSampleVector(std::string file_path) {

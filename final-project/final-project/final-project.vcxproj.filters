@@ -73,6 +73,9 @@
     <ClCompile Include="src\UnitTesting.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\NBC.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -219,6 +222,9 @@
       <Filter>addons\ofxAudioFile\libs</Filter>
     </ClInclude>
     <ClInclude Include="src\catch.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NBC.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

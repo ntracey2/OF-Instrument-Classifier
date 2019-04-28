@@ -96,7 +96,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\mlpack\mlpack-3.0.4\build\include;C:\mlpack\armadillo-9.300.2\include;C:\boost\boost_1_66_0;C:\Users\nigel\Downloads\marsyas-0.5.0-win32\include;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -104,13 +104,13 @@
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\boost\boost_1_66_0\stage\lib\libboost_serialization-vc141-mt-gd-x64-1_66.lib;C:\boost\boost_1_66_0\stage\lib\libboost_program_options-vc141-mt-gd-x64-1_66.lib;C:\mlpack\mlpack-3.0.4\build\Debug\mlpack.lib;C:\mlpack\armadillo-9.300.2\build\Debug\armadillo.lib;C:\mlpack\mlpack-3.0.4\packages\OpenBLAS.0.2.14.1\lib\native\lib\x64\libopenblas.dll.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy /y "C:\mlpack\mlpack-3.0.4\build\Debug\mlpack.dll" $(OutDir)
-xcopy /y "C:\mlpack\mlpack-3.0.4\packages\OpenBLAS.0.2.14.1\lib\native\bin\x64\*.dll" $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,6 +122,17 @@ xcopy /y "C:\mlpack\mlpack-3.0.4\packages\OpenBLAS.0.2.14.1\lib\native\bin\x64\*
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -130,6 +141,10 @@ xcopy /y "C:\mlpack\mlpack-3.0.4\packages\OpenBLAS.0.2.14.1\lib\native\bin\x64\*
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -218,9 +233,7 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp" />
-    <ClCompile Include="src\FeatureExtraction.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\NBC.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\UnitTesting.cpp" />
   </ItemGroup>
@@ -253,8 +266,6 @@ C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\ad
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.h" />
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h" />
     <ClInclude Include="src\catch.hpp" />
-    <ClInclude Include="src\FeatureExtraction.h" />
-    <ClInclude Include="src\NBC.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

@@ -37,9 +37,6 @@
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp">
       <Filter>addons\ofxGui\src</Filter>
     </ClCompile>
-    <ClCompile Include="src\FeatureExtraction.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.cpp">
       <Filter>addons\ofxGist\src</Filter>
     </ClCompile>
@@ -71,9 +68,6 @@
       <Filter>addons\ofxAudioFile\src</Filter>
     </ClCompile>
     <ClCompile Include="src\UnitTesting.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\NBC.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,9 +164,6 @@
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h">
       <Filter>addons\ofxGui\src</Filter>
     </ClInclude>
-    <ClInclude Include="src\FeatureExtraction.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.h">
       <Filter>addons\ofxGist\src</Filter>
     </ClInclude>
@@ -222,9 +213,6 @@
       <Filter>addons\ofxAudioFile\libs</Filter>
     </ClInclude>
     <ClInclude Include="src\catch.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\NBC.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

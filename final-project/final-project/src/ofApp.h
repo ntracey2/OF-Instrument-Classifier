@@ -66,11 +66,20 @@ class ofApp : public ofBaseApp{
 
 		void PopulateTrainingMatrixFromDir(std::string dir_path);
 
+		void PopulateTestingMatrixFromDir(std::string dir_path);
+
 		void FillTrainingMatrixColumn(std::string file, int i);
+
+		void FillTestingMatrixColumn(std::string file, int c);
 
 		std::vector<float> GetFeatureVector(std::string file);
 
 		std::array<std::array<float, NUM_FEATURES>, NUM_TRAINING_IMAGES> data_matrix;
+		std::array<std::array<float, NUM_FEATURES>, 1496> test_matrix;
 		
 		void SaveTrainingMatrix();
+
+		void SaveTestingMatrix();
+
+
 };

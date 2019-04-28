@@ -29,10 +29,13 @@ void ofApp::setup(){
 	
 	//std::vector<float> sample_vector;
 
-	PopulateTrainingMatrixFromDir("");
+	//PopulateTrainingMatrixFromDir("");
 
-	SaveTrainingMatrix();
+	//SaveTrainingMatrix();
 
+	PopulateTestingMatrixFromDir("");
+
+	SaveTestingMatrix();
 	//for (int i = 0; i < data_matrix.size(); i++) {
 	//	for (int j = 0; j < data_matrix[0].size(); j++) {
 	//		std::cout << data_matrix[i][j] << ", ";
@@ -100,11 +103,44 @@ void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
 	}
 }
 
+void ofApp::PopulateTestingMatrixFromDir(std::string dir_path)
+{
+	//thank stack overflow for file iteration
+	HANDLE hFind;
+	WIN32_FIND_DATA FindFileData;
+	LPCWSTR d = L"bin/data/TestingSamples_/*.wav";
+	int sample = 0;
+	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
+		do {
+			std::wstring ws(FindFileData.cFileName);
+			std::string s(ws.begin(), ws.end());
+
+			//FILL COLUMN
+			std::cout << "processing " + s << std::endl;
+			FillTrainingMatrixColumn(ofToDataPath("TestingSamples_\\" + s), sample);
+			sample++;
+
+		} while (FindNextFile(hFind, &FindFileData));
+		FindClose(hFind);
+	}
+	else {
+		std::cout << "something went wrong, check file path" << std::endl;
+	}
+}
+
 void ofApp::FillTrainingMatrixColumn(std::string file, int c) {
 	std::vector<float> features(GetFeatureVector(file));
 	int i = 0;
 	for (auto f : features) {
 		data_matrix[c][i] = f;
+		i++;
+	}
+}
+void ofApp::FillTestingMatrixColumn(std::string file, int c) {
+	std::vector<float> features(GetFeatureVector(file));
+	int i = 0;
+	for (auto f : features) {
+		test_matrix[c][i] = f;
 		i++;
 	}
 }
@@ -128,6 +164,7 @@ std::vector<float> ofApp::GetFeatureVector(std::string file) {
 
 void ofApp::SaveTrainingMatrix()
 {
+	std::cout << "WRITING TRAINING DATA TO CSV FILE" << std::endl;
 	std::ofstream file;
 	file.open("example.csv");
 	for (int i = 0; i < data_matrix.size(); i++) {
@@ -137,11 +174,26 @@ void ofApp::SaveTrainingMatrix()
 		file << "\n";
 	}
 	file.close();
+	std::cout << "DONE" << std::endl;
+}
+void ofApp::SaveTestingMatrix()
+{
+	std::cout << "WRITING TESTING DATA TO CSV FILE" << std::endl;
+	std::ofstream file;
+	file.open("testdata.csv");
+	for (int i = 0; i < test_matrix.size(); i++) {
+		for (int j = 0; j < data_matrix[0].size(); j++) {
+			file << data_matrix[i][j] << ",";
+		}
+		file << "\n";
+	}
+	file.close();
+	std::cout << "DONE" << std::endl;
 }
 
 std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 
-	std::cout << file_path << std::endl;
+	//std::cout << file_path << std::endl;
 	if (ofFile::doesFileExist(file_path)) {
 		audiofile.load(file_path);
 		if (!audiofile.loaded()) {

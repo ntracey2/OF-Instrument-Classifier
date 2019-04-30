@@ -3,11 +3,13 @@
 #include "ofMain.h"
 #include "ofxAudioFile.h"
 #include "ofxGist.h"
+#include "ofxBaseGui.h"
+#include "ofxGui.h"
 //#include "ofxDir.h"
 //#include "ofxFile.h"
 
-#define NUM_TRAINING_IMAGES 4811
-#define NUM_FEATURES 7
+#define NUM_TRAINING_IMAGES 1497
+#define NUM_FEATURES 14
 
 typedef enum INSTRUMENTS {
 	cel,
@@ -75,11 +77,31 @@ class ofApp : public ofBaseApp{
 		std::vector<float> GetFeatureVector(std::string file);
 
 		std::array<std::array<float, NUM_FEATURES>, NUM_TRAINING_IMAGES> data_matrix;
-		std::array<std::array<float, NUM_FEATURES>, 1496> test_matrix;
+		std::array<std::array<float, NUM_FEATURES>, 832> test_matrix;
 		
 		void SaveTrainingMatrix();
 
 		void SaveTestingMatrix();
 
 
+		ofxButton button;
+		ofxButton load_model;
+		ofxButton test_dir_button;
+		
+		string model_path;
+		string dir_path;
+		string test_dir_path;
+
+		void fileButtonPressed();
+		void modelButtonPressed();
+		void loadTestButtonPressed();
+
+
+		std::vector<ofxButton> classifiers;
+
+		ofxButton nbc_select_button;
+		ofxButton rf_select_button;
+
+		void nbcButtonPressed();
+		void rfButtonPressed();
 };

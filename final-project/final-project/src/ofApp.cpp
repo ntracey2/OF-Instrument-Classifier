@@ -3,15 +3,51 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	
-	//ofBackground(0);
 
+	classifiers.push_back(nbc_select_button);
+	classifiers.push_back(rf_select_button);
+	
+	ofSetBackgroundColor(ofColor::teal);
+	button.setBackgroundColor(ofColor::white);
+	//button.setDefaultHeight
+	button.setTextColor(ofColor::black);
+	button.addListener(this, &ofApp::fileButtonPressed);
+	button.setup("Choose File");
+
+
+
+	load_model.setBackgroundColor(ofColor::white);
+	load_model.setTextColor(ofColor::black);
+	load_model.addListener(this, &ofApp::modelButtonPressed);
+	load_model.setup("Load Model");
+
+	test_dir_button.setBackgroundColor(ofColor::white);
+	test_dir_button.setTextColor(ofColor::black);
+	test_dir_button.addListener(this, &ofApp::modelButtonPressed);
+	test_dir_button.setup("Select Test Directory");
+
+
+	nbc_select_button.setBackgroundColor(ofColor::white);
+	nbc_select_button.setTextColor(ofColor::black);
+	nbc_select_button.addListener(this, &ofApp::nbcButtonPressed);
+	nbc_select_button.setup("Naive Bayes");
+
+	rf_select_button.setBackgroundColor(ofColor::white);
+	rf_select_button.setTextColor(ofColor::black);
+	rf_select_button.addListener(this, &ofApp::rfButtonPressed);
+	rf_select_button.setup("Random Forest");
+	
 	gist.setDetect(GIST_PEAK_ENERGY);
 	gist.setDetect(GIST_ROOT_MEAN_SQUARE);
 	gist.setDetect(GIST_ZERO_CROSSING_RATE);
-	//gist.setDetect(GIST_PITCH);
+	gist.setDetect(GIST_PITCH);	//ludicrously slow
 	gist.setDetect(GIST_SPECTRAL_CENTROID);
 	gist.setDetect(GIST_SPECTRAL_CREST);
+	gist.setDetect(GIST_SPECTRAL_DIFFERENCE);
+	gist.setDetect(GIST_NOTE);
+	gist.setDetect(GIST_SPECTRAL_DIFFERENCE_COMPLEX);
+	gist.setDetect(GIST_SPECTRAL_DIFFERENCE_HALFWAY);
+	gist.setDetect(GIST_SPECTRAL_FLATNESS);
 
 	iMap.insert(pair<std::string, INSTRUMENTS>("cel", cel));
 	iMap.insert(pair<std::string, INSTRUMENTS>("cla", cla));
@@ -33,9 +69,9 @@ void ofApp::setup(){
 
 	//SaveTrainingMatrix();
 
-	PopulateTestingMatrixFromDir("");
+	//PopulateTestingMatrixFromDir("");
 
-	SaveTestingMatrix();
+	//SaveTestingMatrix();
 	//for (int i = 0; i < data_matrix.size(); i++) {
 	//	for (int j = 0; j < data_matrix[0].size(); j++) {
 	//		std::cout << data_matrix[i][j] << ", ";
@@ -73,7 +109,7 @@ void ofApp::SetupGist(const std::vector<float> &audio)
 
 
 	//gist.processAudio(audioFrame);
-	gist.processAudio(audio);
+	gist.processAudio(audio, 512, 1, 44100);
 
 	//std::cout << "DONE!" << std::endl;
 }
@@ -83,7 +119,7 @@ void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
 	//thank stack overflow for file iteration
 	HANDLE hFind;
 	WIN32_FIND_DATA FindFileData;
-	LPCWSTR d = L"bin/data/TrainingSamples/*.wav";
+	LPCWSTR d = L"bin/data/ReducedSetTest_/*.wav";
 	int sample = 0;
 	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
 		do {
@@ -92,7 +128,7 @@ void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
 			
 			//FILL COLUMN
 			std::cout << "processing " + s << std::endl;
-			FillTrainingMatrixColumn(ofToDataPath("TrainingSamples\\" + s), sample);
+			FillTrainingMatrixColumn(ofToDataPath("ReducedSetTest_\\" + s), sample);
 			sample++;
 
 		} while (FindNextFile(hFind, &FindFileData));
@@ -108,7 +144,7 @@ void ofApp::PopulateTestingMatrixFromDir(std::string dir_path)
 	//thank stack overflow for file iteration
 	HANDLE hFind;
 	WIN32_FIND_DATA FindFileData;
-	LPCWSTR d = L"bin/data/TestingSamples_/*.wav";
+	LPCWSTR d = L"bin/data/ReducedTesting_/*.wav";
 	int sample = 0;
 	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
 		do {
@@ -117,7 +153,7 @@ void ofApp::PopulateTestingMatrixFromDir(std::string dir_path)
 
 			//FILL COLUMN
 			std::cout << "processing " + s << std::endl;
-			FillTrainingMatrixColumn(ofToDataPath("TestingSamples_\\" + s), sample);
+			FillTrainingMatrixColumn(ofToDataPath("ReducedTesting_\\" + s), sample);
 			sample++;
 
 		} while (FindNextFile(hFind, &FindFileData));
@@ -153,10 +189,21 @@ std::vector<float> ofApp::GetFeatureVector(std::string file) {
 	features.push_back(gist.getValue(GIST_ZERO_CROSSING_RATE));
 	features.push_back(gist.getValue(GIST_PEAK_ENERGY));
 	features.push_back(gist.getValue(GIST_ROOT_MEAN_SQUARE));
-	//features.push_back(gist.getValue(GIST_PITCH));
+	features.push_back(gist.getValue(GIST_PITCH));
 	features.push_back(gist.getValue(GIST_SPECTRAL_CENTROID));
 	features.push_back(gist.getValue(GIST_SPECTRAL_CREST));
+	features.push_back(gist.getValue(GIST_SPECTRAL_DIFFERENCE));
+	features.push_back(gist.getValue(GIST_SPECTRAL_DIFFERENCE_HALFWAY));
+	features.push_back(gist.getValue(GIST_SPECTRAL_DIFFERENCE_COMPLEX));
+	//features.push_back(gist.getValue(GIST_NOTE)); //returning NaN
+	//features.push_back(gist.getValue(GIST_HIGH_FREQUENCY_CONTENT));
+	features.push_back(gist.getValue(GIST_SPECTRAL_FLATNESS));
 	features.push_back(gist.getMFCCAvg(12));
+	features.push_back(gist.getMFCCMax(12));
+	features.push_back(gist.getMFCCMin(12));
+
+
+
 	features.push_back(iMap[file.substr(26, 3)]);	//label in last row
 
 	return features;
@@ -191,20 +238,17 @@ void ofApp::SaveTestingMatrix()
 	std::cout << "DONE" << std::endl;
 }
 
-std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 
-	//std::cout << file_path << std::endl;
+
+std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 	if (ofFile::doesFileExist(file_path)) {
 		audiofile.load(file_path);
 		if (!audiofile.loaded()) {
 			std::cout << "error loading file, double check the file path" << std::endl;
 		}
-	}
-	else {
+	} else {
 		std::cout << "input file does not exist" << std::endl;
 	}
-
-	//audiofile.load(file_path);
 
 	float* samples_data = audiofile.data();
 
@@ -225,7 +269,24 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	button.draw();
+	load_model.draw();
+	load_model.setPosition(0, 100);
+	test_dir_button.draw();
+	test_dir_button.setPosition(0, 200);
 
+	ofDrawBitmapString(dir_path, 100, 100);
+	ofDrawBitmapString("Classifier Type", 0, 300);
+
+	nbc_select_button.draw();
+	nbc_select_button.setPosition(0, 320);
+
+	rf_select_button.draw();
+	rf_select_button.setPosition(0, 350);
+
+	ofDrawLine(205, 0, 205, 1000);
+
+	//if (classifiers.at("nbc")) {}
 }
 
 //--------------------------------------------------------------
@@ -236,6 +297,44 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 
+}
+
+void ofApp::fileButtonPressed()
+{
+	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a training directory", true);
+
+	if (openFileResult.bSuccess) {
+		dir_path = openFileResult.getPath();
+	}
+}
+
+void ofApp::modelButtonPressed() {
+	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a compatible training model");
+
+	if (openFileResult.bSuccess) {
+		model_path = openFileResult.getPath();
+	}
+}
+
+void ofApp::loadTestButtonPressed()
+{
+	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a testing directory", true);
+
+	if (openFileResult.bSuccess) {
+		test_dir_path = openFileResult.getPath();
+	}
+}
+
+void ofApp::nbcButtonPressed()
+{
+	rf_select_button.setBackgroundColor(ofColor::white);
+	nbc_select_button.setBackgroundColor(ofColor::purple);
+}
+
+void ofApp::rfButtonPressed()
+{
+	nbc_select_button.setBackgroundColor(ofColor::white);
+	rf_select_button.setBackgroundColor(ofColor::purple);
 }
 
 //--------------------------------------------------------------

@@ -96,7 +96,17 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
+C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -104,7 +114,6 @@
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
     </PostBuildEvent>
@@ -122,17 +131,6 @@
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src;
-C:\Users\nigel\source\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

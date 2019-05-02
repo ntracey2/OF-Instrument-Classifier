@@ -57,3 +57,9 @@ TEST_CASE("Get feature vector") {
 		cout << f << endl;
 	}
 }*/
+
+TEST_CASE("Test classification") {
+	SECTION("") {
+		
+	}
+}

@@ -3,14 +3,8 @@
 #include "mlpack/core.hpp"
 #include "mlpack/methods/random_forest/random_forest.hpp"
 #include "mlpack/methods/decision_tree/random_dimension_select.hpp"
-#include "mlpack/core/cv/k_fold_cv.hpp"
-#include "mlpack/core/cv/metrics/accuracy.hpp"
-#include "mlpack/core/cv/metrics/precision.hpp"
-#include "mlpack/core/cv/metrics/recall.hpp"
-#include "mlpack/core/cv/metrics/F1.hpp"
 #include "mlpack/methods/naive_bayes/naive_bayes_classifier.hpp"
 #include "mlpack/methods/naive_bayes/naive_bayes_classifier_impl.hpp"
-#include "mlpack/methods/logistic_regression/logistic_regression.hpp"
 
 using namespace arma;
 using namespace mlpack;
@@ -33,7 +27,6 @@ private:
 	int numTrees = 10;
 	int minimumLeafSize = 3;
 
-	ofxSlider<int> class_slider;
 
 public:
 	void LoadData(std::string file);

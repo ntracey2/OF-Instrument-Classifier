@@ -1,5 +1,4 @@
 #include "ofApp.h"
-//#include "FeatureExtraction.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -75,60 +74,14 @@ void ofApp::setup(){
 	iMap.insert(pair<std::string, INSTRUMENTS>("tru", tru));
 	iMap.insert(pair<std::string, INSTRUMENTS>("vio", vio));
 	iMap.insert(pair<std::string, INSTRUMENTS>("voi", voi));
-
-
-	//class_slider.
-	//std::string path = "[sax][cla]1573__1.wav";
-	
-	//std::vector<float> sample_vector;
-
-	//PopulateTrainingMatrixFromDir("");
-
-	//SaveTrainingMatrix();
-
-	//PopulateTestingMatrixFromDir("");
-
-	//SaveTestingMatrix();
-	//for (int i = 0; i < data_matrix.size(); i++) {
-	//	for (int j = 0; j < data_matrix[0].size(); j++) {
-	//		std::cout << data_matrix[i][j] << ", ";
-	//	}
-	//	std::cout << std::endl;
-	//}
-
-
-
-	//std::vector<float> features(GetFeatureVector(ofToDataPath(path)));
-
-	/*for (auto f : features) {
-		std::cout << f << std::endl;
-	}*/
-
-	//sample_vector = GetSampleVector(ofToDataPath(path));
-
-	//RetrieveData(sample_vector);
 }
-
-
-
 
 void ofApp::SetupGist(const std::vector<float> &audio)
 {
-
-	//int frameSize = 512;
-	//int sampleRate = 44100;
-	
-
-	
 	gist.clearHistory();
 
 	std::vector<float> audioFrame(audio); //fill audio frame with samples
-
-
-	//gist.processAudio(audioFrame);
 	gist.processAudio(audio, 512, 1, 44100);
-
-	//std::cout << "DONE!" << std::endl;
 }
 
 void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
@@ -419,20 +372,6 @@ void ofApp::classSliderMoved()
 {
 	classifier.setNumClasses(class_slider);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){

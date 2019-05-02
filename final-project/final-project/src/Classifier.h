@@ -33,10 +33,12 @@ private:
 	int numTrees = 10;
 	int minimumLeafSize = 3;
 
+	ofxSlider<int> class_slider;
+
 public:
 	void LoadData(std::string file);
 	void LoadTestData(std::string file);
-
+	
 	void TrainNBC();
 	void TrainRF();
 
@@ -48,6 +50,8 @@ public:
 	void SaveRFModel();
 	void LoadNBCModel(std::string file);
 	void LoadRFModel(std::string file);
+
+	void setNumClasses(int n);
 
 	std::vector<std::vector<float>> GetConfusionMatrix();
 };

@@ -7,11 +7,11 @@ void ofApp::setup(){
 	classifiers.push_back(nbc_select_button);
 	classifiers.push_back(rf_select_button);
 
-	
+	class_slider.setup("Number of Classes", 0, 0, 20);
+	class_slider.addListener(this, &ofApp::classSliderMoved);
 	
 	ofSetBackgroundColor(ofColor::teal);
 	button.setBackgroundColor(ofColor::white);
-	//button.setDefaultHeight
 	button.setTextColor(ofColor::black);
 	button.addListener(this, &ofApp::fileButtonPressed);
 	button.setup("Select Training Directory");
@@ -76,6 +76,8 @@ void ofApp::setup(){
 	iMap.insert(pair<std::string, INSTRUMENTS>("vio", vio));
 	iMap.insert(pair<std::string, INSTRUMENTS>("voi", voi));
 
+
+	//class_slider.
 	//std::string path = "[sax][cla]1573__1.wav";
 	
 	//std::vector<float> sample_vector;
@@ -134,7 +136,9 @@ void ofApp::PopulateTrainingMatrixFromDir(std::string dir_path)
 	//thank stack overflow for file iteration
 	HANDLE hFind;
 	WIN32_FIND_DATA FindFileData;
-	LPCWSTR d = L"bin/data/ReducedSetTest_/*.wav";
+	dir_path.append("/*.wav");
+	std::wstring stemp = std::wstring(dir_path.begin(), dir_path.end());
+	LPCWSTR d = stemp.c_str();
 	int sample = 0;
 	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
 		do {
@@ -159,7 +163,9 @@ void ofApp::PopulateTestingMatrixFromDir(std::string dir_path)
 	//thank stack overflow for file iteration
 	HANDLE hFind;
 	WIN32_FIND_DATA FindFileData;
-	LPCWSTR d = L"bin/data/ReducedTesting_/*.wav";
+	dir_path.append("/*.wav");
+	std::wstring stemp = std::wstring(dir_path.begin(), dir_path.end());
+	LPCWSTR d = stemp.c_str();
 	int sample = 0;
 	if ((hFind = FindFirstFile(d, &FindFileData)) != INVALID_HANDLE_VALUE) {
 		do {
@@ -253,8 +259,6 @@ void ofApp::SaveTestingMatrix()
 	std::cout << "DONE" << std::endl;
 }
 
-
-
 std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 	if (ofFile::doesFileExist(file_path)) {
 		audiofile.load(file_path);
@@ -270,11 +274,6 @@ std::vector<float> ofApp::GetSampleVector(std::string file_path) {
 	std::vector<float> to_ret(samples_data, samples_data + audiofile.length());
 	return to_ret;
 }
-
-
-
-
-
 
 
 //--------------------------------------------------------------
@@ -314,7 +313,20 @@ void ofApp::draw(){
 	classify_button.draw();
 	classify_button.setPosition(0, 250);
 
+	class_slider.setPosition(0, 300);
+	class_slider.draw();
+
 	ofDrawLine(205, 0, 205, 1000);
+
+	if (shouldDrawConfusionMatrix) {
+		std::vector<std::vector<float>> matr;
+		for (int i = 0; i < matr.size(); i++) {
+			for (int j = 0; j < matr[0].size(); j++) {
+				ofDrawBitmapString(matr[i][j], 300 + (i * 20), 300 + (j * 20));
+			}
+		}
+		shouldDrawConfusionMatrix = false;
+	}
 }
 
 //--------------------------------------------------------------
@@ -400,6 +412,12 @@ void ofApp::classifyButtonPressed()
 	else { 
 		classifier.ClassifyRF();
 	}
+	shouldDrawConfusionMatrix = true;
+}
+
+void ofApp::classSliderMoved()
+{
+	classifier.setNumClasses(class_slider);
 }
 
 

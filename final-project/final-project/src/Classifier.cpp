@@ -80,3 +80,7 @@ std::vector<std::vector<float>> Classifier::GetConfusionMatrix()
 	}
 	return confusion;
 }
+
+void Classifier::setNumClasses(int n) {
+	numClasses = n;
+}

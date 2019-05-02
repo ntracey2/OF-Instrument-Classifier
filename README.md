@@ -1,3 +1,6 @@
 # Final Project
 *This project aims to be a Naive Bayes classifier for isolated instrument sounds. It is an openframeworks application that makes use of Gist, AudioFile, and (possible) MLPack libraries. Input audio files must be .wav and file names must begin with the first three characters of the instrument in brackets, for example: `[tru]exmaple_trumpet_file.wav`
 *The GUI is easy to use, simply select a directory for training then click the train button, or load a saved mlpack-compatible model, then select your testing directory and press the classify button. 
+*When saving a model, it saves a .xml file by default to the source folder of the project.
+*NOTE: Make sure that your architecture version of MLPack is consistent with your openframeworks and visual studio setup. The program will not run if for example you are compiling openframeworks with a 32 bit configuration when your compiled mlpack library is a 64 bit compilation.
+*Accuracy is improved by the simplicity of the dataset, works best with isolated single note recordings. Varied recording structure and noise may heavily distort results.

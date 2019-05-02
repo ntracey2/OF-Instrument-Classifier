@@ -54,6 +54,10 @@ private:
 
 	Classifier classifier;
 
+	ofxIntSlider class_slider;
+
+	bool shouldDrawConfusionMatrix = false;
+
 public:
 	void setup();
 	
@@ -113,4 +117,5 @@ public:
 	void saveModelButtonPressed();
 	void classifyButtonPressed();
 
+	void classSliderMoved();
 };

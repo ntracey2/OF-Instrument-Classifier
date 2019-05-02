@@ -6,15 +6,15 @@ void ofApp::setup(){
 
 	classifiers.push_back(nbc_select_button);
 	classifiers.push_back(rf_select_button);
+
+	
 	
 	ofSetBackgroundColor(ofColor::teal);
 	button.setBackgroundColor(ofColor::white);
 	//button.setDefaultHeight
 	button.setTextColor(ofColor::black);
 	button.addListener(this, &ofApp::fileButtonPressed);
-	button.setup("Choose File");
-
-
+	button.setup("Select Training Directory");
 
 	load_model.setBackgroundColor(ofColor::white);
 	load_model.setTextColor(ofColor::black);
@@ -26,7 +26,6 @@ void ofApp::setup(){
 	test_dir_button.addListener(this, &ofApp::modelButtonPressed);
 	test_dir_button.setup("Select Test Directory");
 
-
 	nbc_select_button.setBackgroundColor(ofColor::white);
 	nbc_select_button.setTextColor(ofColor::black);
 	nbc_select_button.addListener(this, &ofApp::nbcButtonPressed);
@@ -36,6 +35,22 @@ void ofApp::setup(){
 	rf_select_button.setTextColor(ofColor::black);
 	rf_select_button.addListener(this, &ofApp::rfButtonPressed);
 	rf_select_button.setup("Random Forest");
+
+	train_button.setBackgroundColor(ofColor::white);
+	train_button.setTextColor(ofColor::black);
+	train_button.addListener(this, &ofApp::trainButtonPressed);
+	train_button.setup("Train Model");
+
+	save_model_button.setBackgroundColor(ofColor::white);
+	save_model_button.setTextColor(ofColor::black);
+	save_model_button.addListener(this, &ofApp::saveModelButtonPressed);
+	save_model_button.setup("Save Model");
+
+	classify_button.setBackgroundColor(ofColor::white);
+	classify_button.setTextColor(ofColor::black);
+	classify_button.addListener(this, &ofApp::classifyButtonPressed);
+	classify_button.setup("Classify");
+
 	
 	gist.setDetect(GIST_PEAK_ENERGY);
 	gist.setDetect(GIST_ROOT_MEAN_SQUARE);
@@ -269,24 +284,37 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	ofDrawBitmapString("Setup", 0, 15);
+
 	button.draw();
+	button.setPosition(0, 20);
+
 	load_model.draw();
-	load_model.setPosition(0, 100);
+	load_model.setPosition(0, 50);
 	test_dir_button.draw();
-	test_dir_button.setPosition(0, 200);
+	test_dir_button.setPosition(0, 80);
 
 	ofDrawBitmapString(dir_path, 100, 100);
-	ofDrawBitmapString("Classifier Type", 0, 300);
+	ofDrawBitmapString("Classifier Type", 0, 120);
 
 	nbc_select_button.draw();
-	nbc_select_button.setPosition(0, 320);
+	nbc_select_button.setPosition(0, 125);
 
 	rf_select_button.draw();
-	rf_select_button.setPosition(0, 350);
+	rf_select_button.setPosition(0, 155);
+
+	ofDrawBitmapString("Actions", 0, 195);
+
+	train_button.draw();
+	train_button.setPosition(0, 200);
+
+	save_model_button.draw();
+	save_model_button.setPosition(0, 230);
+
+	classify_button.draw();
+	classify_button.setPosition(0, 250);
 
 	ofDrawLine(205, 0, 205, 1000);
-
-	//if (classifiers.at("nbc")) {}
 }
 
 //--------------------------------------------------------------
@@ -303,16 +331,22 @@ void ofApp::fileButtonPressed()
 {
 	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a training directory", true);
 
-	if (openFileResult.bSuccess) {
-		dir_path = openFileResult.getPath();
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.LoadData(openFileResult.getPath());
+	}
+	else {
+		classifier.LoadData(openFileResult.getPath());
 	}
 }
 
 void ofApp::modelButtonPressed() {
 	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a compatible training model");
 
-	if (openFileResult.bSuccess) {
-		model_path = openFileResult.getPath();
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.LoadNBCModel(openFileResult.getPath());
+	}
+	else { 
+		classifier.LoadRFModel(openFileResult.getPath());
 	}
 }
 
@@ -320,8 +354,11 @@ void ofApp::loadTestButtonPressed()
 {
 	ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a testing directory", true);
 
-	if (openFileResult.bSuccess) {
-		test_dir_path = openFileResult.getPath();
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.LoadTestData(openFileResult.getPath());
+	}
+	else {
+		classifier.LoadTestData(openFileResult.getPath());
 	}
 }
 
@@ -336,6 +373,48 @@ void ofApp::rfButtonPressed()
 	nbc_select_button.setBackgroundColor(ofColor::white);
 	rf_select_button.setBackgroundColor(ofColor::purple);
 }
+
+void ofApp::trainButtonPressed()
+{
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.TrainNBC();
+	} else { //default to random forrest if no selection
+		classifier.TrainRF();
+	}
+}
+
+void ofApp::saveModelButtonPressed()
+{
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.SaveNBCModel();
+	} else { 
+		classifier.SaveRFModel();
+	}
+}
+
+void ofApp::classifyButtonPressed()
+{
+	if (nbc_select_button.getBackgroundColor() == ofColor::purple) {
+		classifier.ClassifyNBC();
+	}
+	else { 
+		classifier.ClassifyRF();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\ofApp.cpp">
@@ -6,6 +6,45 @@
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnitTesting.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.cpp">
+      <Filter>addons\ofxAudioFile\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.cpp">
+      <Filter>addons\ofxGist\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.cpp">
+      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.cpp">
+      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.cpp">
+      <Filter>addons\ofxGist\libs\Gist\src\mfcc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.cpp">
+      <Filter>addons\ofxGist\libs\Gist\src\onset-detection-functions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.cpp">
+      <Filter>addons\ofxGist\libs\Gist\src\pitch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.c">
+      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.cpp">
+      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.cpp">
+      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.cpp">
       <Filter>addons\ofxGui\src</Filter>
@@ -37,37 +76,7 @@
     <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp">
       <Filter>addons\ofxGui\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.cpp">
-      <Filter>addons\ofxGist\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.cpp">
-      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.cpp">
-      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.cpp">
-      <Filter>addons\ofxGist\libs\Gist\src\mfcc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.cpp">
-      <Filter>addons\ofxGist\libs\Gist\src\onset-detection-functions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.cpp">
-      <Filter>addons\ofxGist\libs\Gist\src\pitch</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.c">
-      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.cpp">
-      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.cpp">
-      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.cpp">
-      <Filter>addons\ofxAudioFile\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\UnitTesting.cpp">
+    <ClCompile Include="src\Classifier.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,60 +85,114 @@
       <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons">
-      <UniqueIdentifier>{fcf0d0a3-b695-4153-946c-0157e9b081c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGui">
-      <UniqueIdentifier>{779c9946-915b-401c-95d7-1032cf873e70}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGui\src">
-      <UniqueIdentifier>{9f81fcf5-1d08-4988-9cac-d2fdbb77de8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist">
-      <UniqueIdentifier>{de55c857-7649-4a4a-a9de-94d8e42f194c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\src">
-      <UniqueIdentifier>{a948ce9c-66e7-4c16-9361-8a94f46c677c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs">
-      <UniqueIdentifier>{47466b12-b3e1-4658-a860-1c08f87fb1ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist">
-      <UniqueIdentifier>{568eb847-a6c0-4f67-92eb-eb2fef501987}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist\src">
-      <UniqueIdentifier>{6860f96a-d717-40ce-acf6-28b2d9282cab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist\src\core">
-      <UniqueIdentifier>{a36bbc74-8164-4aa4-8f61-a5c3e179c5cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist\src\mfcc">
-      <UniqueIdentifier>{6b2d7272-3767-4ac2-8ff2-f5a192b492ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist\src\onset-detection-functions">
-      <UniqueIdentifier>{a77981af-9b81-4dfb-88ce-e5db06cef4ba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Gist\src\pitch">
-      <UniqueIdentifier>{86b57582-8f90-4eca-9163-35a89a87ed4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\kiss_fft130">
-      <UniqueIdentifier>{7973fd56-aaf9-46d4-9f36-be2583cba51e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGist\libs\Stark-Plumbley">
-      <UniqueIdentifier>{38361622-b38b-42b6-b9a4-c35615f9fbce}</UniqueIdentifier>
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxAudioFile">
-      <UniqueIdentifier>{40d0a374-7690-4ebc-a45f-95beaa65f1d7}</UniqueIdentifier>
+      <UniqueIdentifier>{010EAA6C-DF0B-6AE2-9885-C475}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxAudioFile\src">
-      <UniqueIdentifier>{eebd167d-7359-4ef3-896d-a056acbef6e8}</UniqueIdentifier>
+      <UniqueIdentifier>{C1E6B5D8-5BFE-B788-AEF4-D956}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxAudioFile\libs">
-      <UniqueIdentifier>{7e4acce3-d5a2-4fbe-8a7b-9d78a51d049d}</UniqueIdentifier>
+      <UniqueIdentifier>{FFF0DC64-CB2B-F1B7-B927-0659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist">
+      <UniqueIdentifier>{31EA2BA3-7788-547D-06B4-AFDD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\src">
+      <UniqueIdentifier>{F8091373-FD72-BABE-B10E-D3E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs">
+      <UniqueIdentifier>{A1B4C7FE-6744-B2ED-2396-F0E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist">
+      <UniqueIdentifier>{A8CB5C61-836A-42F5-F315-8146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist\src">
+      <UniqueIdentifier>{FB75FD2B-29BA-A8D1-D3A1-BE83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist\src\core">
+      <UniqueIdentifier>{22881F6D-8832-80A7-FC67-0D59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist\src\mfcc">
+      <UniqueIdentifier>{0995885F-1E39-5004-5C05-1F74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist\src\onset-detection-functions">
+      <UniqueIdentifier>{A61AD531-7FF3-AFCB-4B5F-EED8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Gist\src\pitch">
+      <UniqueIdentifier>{1763ED2D-D041-A3F2-4E21-CB9A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\kiss_fft130">
+      <UniqueIdentifier>{082258AE-5333-9BCB-6410-629B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGist\libs\Stark-Plumbley">
+      <UniqueIdentifier>{75DBBEB8-5932-3FC3-FB4B-BC29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui">
+      <UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui\src">
+      <UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\catch.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.h">
+      <Filter>addons\ofxAudioFile\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_flac.h">
+      <Filter>addons\ofxAudioFile\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_mp3.h">
+      <Filter>addons\ofxAudioFile\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_wav.h">
+      <Filter>addons\ofxAudioFile\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\stb_vorbis.h">
+      <Filter>addons\ofxAudioFile\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.h">
+      <Filter>addons\ofxGist\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.h">
+      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.h">
+      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\Gist.h">
+      <Filter>addons\ofxGist\libs\Gist\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.h">
+      <Filter>addons\ofxGist\libs\Gist\src\mfcc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.h">
+      <Filter>addons\ofxGist\libs\Gist\src\onset-detection-functions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.h">
+      <Filter>addons\ofxGist\libs\Gist\src\pitch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.h">
+      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\_kiss_fft_guts.h">
+      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.h">
+      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.h">
+      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.h">
       <Filter>addons\ofxGui\src</Filter>
@@ -164,55 +227,7 @@
     <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h">
       <Filter>addons\ofxGui\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\src\ofxGist.h">
-      <Filter>addons\ofxGist\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\Gist.h">
-      <Filter>addons\ofxGist\libs\Gist\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreFrequencyDomainFeatures.h">
-      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\core\CoreTimeDomainFeatures.h">
-      <Filter>addons\ofxGist\libs\Gist\src\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\mfcc\MFCC.h">
-      <Filter>addons\ofxGist\libs\Gist\src\mfcc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\onset-detection-functions\OnsetDetectionFunction.h">
-      <Filter>addons\ofxGist\libs\Gist\src\onset-detection-functions</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Gist\src\pitch\Yin.h">
-      <Filter>addons\ofxGist\libs\Gist\src\pitch</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\kiss_fft.h">
-      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\kiss_fft130\_kiss_fft_guts.h">
-      <Filter>addons\ofxGist\libs\kiss_fft130</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\ChordDetector.h">
-      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxGist\libs\Stark-Plumbley\Chromagram.h">
-      <Filter>addons\ofxGist\libs\Stark-Plumbley</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\src\ofxAudioFile.h">
-      <Filter>addons\ofxAudioFile\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_flac.h">
-      <Filter>addons\ofxAudioFile\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_mp3.h">
-      <Filter>addons\ofxAudioFile\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\dr_wav.h">
-      <Filter>addons\ofxAudioFile\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\lib\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\addons\ofxAudioFile\libs\stb_vorbis.h">
-      <Filter>addons\ofxAudioFile\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="src\catch.hpp">
+    <ClInclude Include="src\Classifier.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
